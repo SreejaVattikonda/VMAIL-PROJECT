@@ -1,0 +1,132 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.banner{
+	width: 100%;
+	height: 100vh;
+	position: relative;
+	overflow: hidden;
+}
+.slider{
+	width: 100%;
+	height: 100vh;
+	position: absolute;
+	top: 0;
+
+}
+#slideImg{
+	width: 100%;
+	height: 100%;
+}
+.overlay{
+	width: 100%;
+	height: 100vh;
+	background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7));
+	position: absolute;
+	top:0
+}
+.log{
+	width: 85%;
+	margin: auto;
+	padding: 35px 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.log ul{
+	flex: 1;
+	text-align: right;
+}
+.log ul li{
+	list-style: none;
+	display: inline-block;
+	margin: 0 20px;
+}
+.log ul li a{
+	text-decoration: none;
+	color: #fff;
+}
+
+.content{
+	width: 60%;
+	margin: 100px auto 0;
+	text-align: center;
+	color: #fff;
+}
+.content h1{
+	font-size: 50px;
+}
+.content h3{
+	width: 95%;
+	margin: 20px aut0 100px;
+	font-weight: 100;
+	line-height: 25px;
+}
+.login{
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 999;
+    width: 370px;
+    text-align: center;
+    padding: 60px 32px;
+    background: rgba(225,225,255,0.4);
+    box-shadow: -1px 4px 28px 0px rgba(0,0, 0, 0.75);
+}
+.login header{
+    color: white;
+    font-size: 33px;
+    font-weight: 600;
+    margin: 0 0 35px 0;
+    font-family: 'Montserrat', sans-serif;
+}
+.field{
+    position: relative;
+    height: 45px;
+    width: 100%;
+    display: flex;
+    background: rgba(255,255, 255, 0.94); ;
+}
+.field input{
+    height: 100%;
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #222;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+}
+.space{
+    margin-top: 16px;
+}
+input[type="submit"]{
+    background: #eff143;
+    border: 1px solid #f6f88c;
+    color: white;
+    font-size: 18px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+}
+input[type="submit"]:hover{
+    background: #f9fd00;
+}
+.signup{
+    color: white;
+    font-size: 15px;
+    font-family: 'Poppins',sans-serif;
+}
+.signup a{
+    color: #3498db;
+    text-decoration: none;
+}
+.signup a:hover{
+    text-decoration: underline;
+}

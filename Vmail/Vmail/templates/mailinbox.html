@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Gmail</title>
+		<link
+			href="https://fonts.googleapis.com/icon?family=Material+Icons"
+			rel="stylesheet"
+		/>
+		<script src="/static/js/speech.js" defer></script>
+		<script src="/static/js/mailinbox.js" defer></script>
+		<script src="/static/js/scripts.js" defer></script>
+		<script src="/static/js/theme.js" defer></script>
+		
+		<link rel="stylesheet" href="/static/css/homestyle.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+			integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+	</head>
+	<body>
+		<!-- Header Starts -->
+		<div class="header">
+			<div class="header__left">
+				<span class="material-icons"> favorite </span>
+				<h2>V-Mail</h2>
+			</div>
+
+			<div class="header__middle">
+				<h2>Hola! Welcome to voice based mail for blind</h2>
+			</div>
+			<div class="header__right">
+				<span class="material-icons">home</span>
+				<a href="{{ url_for('mailhome') }}" id="home"><h3>M-Home</h3></a>
+			</div>
+		</div>
+		<!-- Header Ends -->
+
+		<div class="main__body">
+			<!-- Sidebar Starts -->
+			<div class="sidebar">
+				<button class="sidebar__compose modal-btn">
+					<span class="material-icons"> add </span
+						><a href="{{ url_for('composemail') }}" id='compose'>Compose</a>
+				</button>
+				<div class="sidebarOption sidebarOption__active">
+					<span class="material-icons"> inbox </span>
+					<a href="{{ url_for('mailinbox') }}" id='inbox'><h3>Inbox</h3></a>
+				</div>
+
+				<div class="sidebarOption">
+					<span class="material-icons"> near_me </span>
+					<a href="{{ url_for('mailsent') }}" id='sent'><h3>Sent</h3></a>
+				</div>
+
+				<div class="sidebarOption">
+					<span class="material-icons"> star </span>
+					<a href="{{ url_for('mailstarred') }}" id='starred'><h3>Starred</h3></a>
+				</div>
+
+				<div class="sidebarOption">
+					<span class="material-icons"> delete </span>
+					<a href="{{ url_for('mailtrash') }}" id='trash'><h3>Trash</h3></a>
+				</div>
+
+				<div class="sidebarOption">
+					<span class="material-icons"> logout </span>
+					<a href="{{ url_for('default') }}" id='logout'><button>Logout</button></a>
+				</div>
+				<div class="sidebar__footer"></div>
+			</div>
+			<!-- Sidebar Ends -->
+
+			<div class="emailList">
+				<div class="emailList__list">
+					<!-- Email Row Starts -->
+					<div class="emailRow modal-btn-mail">
+						<h3 class="emailRow__title">Mounika Adidala</h3>
+
+						<div class="emailRow__message">
+							<h4>
+								Well my imaginary friend think you have serious mental problems
+								<span class="emailRow__description"> Mounika </span>
+							</h4>
+						</div>
+
+						<p class="emailRow__time">10pm</p>
+					</div>
+					<div class="emailRow modal-btn-mail">
+						<h3 class="emailRow__title">Shivani Kanmani</h3>
+
+						<div class="emailRow__message">
+							<h4>
+								Koncham jaragara, naak koncham space kavali
+								<span class="emailRow__description"> Shivani </span>
+							</h4>
+						</div>
+
+						<p class="emailRow__time">12pm</p>
+					</div>
+					<div class="emailRow modal-btn-mail">
+						<h3 class="emailRow__title">Madhuri Kolli</h3>
+
+						<div class="emailRow__message">
+							<h4>
+								I'm not sarcastic. I'm jst intelligent beyond your
+								understanding.
+								<span class="emailRow__description"> Madhuri </span>
+							</h4>
+						</div>
+
+						<p class="emailRow__time">10pm</p>
+					</div>
+					<!-- Email Row Ends -->
+				</div>
+			</div>
+		</div>
+
+		<div class="modal-overlay">
+				<button class="close-btn">
+					<i class="fas fa-times"></i>
+				</button>
+			</div>
+		</div>
+
+		<div class="modal-overlay-mail">
+			<div class="modal-container-mail">
+				Well my imaginary friend think you have serious mental problems
+				<button class="close-btn-mail">
+					<i class="fas fa-times"></i>
+				</button>
+			</div>
+		</div>
+
+		<div class="modal-overlay-mail">
+			<div class="modal-container-mail">
+				Koncham jaragara, naak koncham space kavali
+				<button class="close-btn-mail">
+					<i class="fas fa-times"></i>
+				</button>
+			</div>
+		</div>
+		<div class="modal-overlay-mail">
+			<div class="modal-container-mail">
+				I'm not sarcastic. I'm just intelligent beyond your understanding
+				<button class="close-btn-mail">
+					<i class="fas fa-times"></i>
+				</button>
+			</div>
+		</div>
+
+		
+	</body>
+</html>

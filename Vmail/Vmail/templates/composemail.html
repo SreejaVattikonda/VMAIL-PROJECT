@@ -1,0 +1,114 @@
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			href="https://fonts.googleapis.com/icon?family=Material+Icons"
+			rel="stylesheet"
+		/>
+		<title>Document</title>
+		<link rel="stylesheet" href="/static/css/homestyle.css" />
+		<script src="/static/js/speech.js" defer></script>
+		<script src="/static/js/composemail.js" defer></script>
+		<script src="/static/js/theme.js" defer></script>
+		<!-- basic css by ash -->
+		<style>
+			.modal-container {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-direction: column;
+				border: 2px solid black;
+				height: 100vh;
+			}
+			input {
+				border-radius: 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- Header Starts -->
+		<div class="header">
+			<div class="header__left">
+				<span class="material-icons"> favorite </span>
+				<h2>V-Mail</h2>
+			</div>
+
+			<div class="header__middle">
+				<h2>Hola! Welcome to voice based mail for blind</h2>
+			</div>
+			<div class="header__right">
+				<span class="material-icons">home</span>
+				<a href="{{ url_for('mailhome') }}" id="home"><h3>M-Home</h3></a>
+			</div>
+		</div>
+		<!-- Header Ends -->
+
+		<div class="main__body">
+			<!-- Sidebar Starts -->
+			<div class="sidebar">
+				<button class="sidebar__compose modal-btn">
+					<span class="material-icons"> add </span
+					><a href="{{ url_for('composemail') }}" id="compose">Compose</a>
+				</button>
+				<div class="sidebarOption sidebarOption__active">
+					<span class="material-icons" id="inbox"> inbox </span>
+					<a href="{{ url_for('mailinbox') }}"><h3>Inbox</h3></a>
+				</div>
+
+				<div class="sidebarOption">
+					<span class="material-icons"> near_me </span>
+					<a href="{{ url_for('mailsent') }}" id="sent"><h3>Sent</h3></a>
+				</div>
+
+				<div class="sidebarOption">
+					<span class="material-icons"> star </span>
+					<a href="{{ url_for('mailstarred') }}" id="starred"
+						><h3>Starred</h3></a
+					>
+				</div>
+
+				<div class="sidebarOption">
+					<span class="material-icons"> delete </span>
+					<a href="{{ url_for('mailtrash') }}" id="trash"><h3>Trash</h3></a>
+				</div>
+
+				<div class="sidebarOption">
+					<span class="material-icons"> logout </span>
+					<a href="{{ url_for('default') }}"
+						><button id="logout">Logout</button></a
+					>
+				</div>
+				<div class="sidebar__footer">
+					<div class="slidebar__footerIcons">
+						<!-- <img src="static/images/robologo.jpg" id="chatbotimg" /> -->
+						<a href="{{ url_for('chatbot') }}" id="sunny"
+							><h1>Say!!! Sunny_Bot</h1></a
+						>
+					</div>
+				</div>
+			</div>
+			<!-- Sidebar Ends -->
+			<div>
+				<div class="modal-container">
+					<div class="form-group">
+						<label>To:</label>
+						<input type="text" id="reciepient" />
+					</div>
+					<div class="form-group">
+						<label>Subject:</label>
+						<input type="text" id="subject" />
+					</div>
+
+					<div class="form-group">
+						<label>Message:</label>
+						<input type="text" id="message" />
+					</div>
+
+					<a href="{{ url_for('mailhome') }}"><button id="send">Send</button></a>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

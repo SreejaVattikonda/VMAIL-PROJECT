@@ -1,0 +1,94 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+.banner{
+	width: 100%;
+	height: 100vh;
+	position: relative;
+	overflow: hidden;
+}
+.slider{
+	width: 100%;
+	height: 100vh;
+	position: absolute;
+	top: 0;
+
+}
+#slideImg{
+	width: 100%;
+	height: 100%;
+}
+.overlay{
+	width: 100%;
+	height: 100vh;
+	background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7));
+	position: absolute;
+	top:0
+}
+.log{
+	width: 85%;
+	margin: auto;
+	padding: 35px 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.log ul{
+	flex: 1;
+	text-align: right;
+}
+.log ul li{
+	list-style: none;
+	display: inline-block;
+	margin: 0 20px;
+}
+.log ul li a{
+	text-decoration: none;
+	color: #fff;
+}
+
+.content{
+	width: 60%;
+	margin: 100px auto 0;
+	text-align: center;
+	color: #fff;
+}
+.content h1{
+	font-size: 50px;
+}
+.content h3{
+	width: 95%;
+	margin: 20px aut0 100px;
+	font-weight: 100;
+	line-height: 25px;
+}
+.box{
+	position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 999;
+    width: 1450px;
+    text-align: center;
+    padding: 60px 32px;
+    background: rgba(225,225,255,0.4);
+    box-shadow: -1px 4px 28px 0px rgba(0,0, 0, 0.75);
+}
+.box h2{
+	margin: 0 0 20px;
+	padding: 0;
+	font-size: 48px;
+	text-transform: uppercase;
+	color: rgb(255, 251, 0);
+}
+.box p{
+	margin: 0;
+	padding: 0;
+	font-size: 20px;
+	font-style: unset ;
+	color: rgb(248, 246, 142);
+}

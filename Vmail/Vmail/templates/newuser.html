@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="static/css/nstyle.css">
+    <script src="../static/js/speech.js" defer></script>
+	<script src="../static/js/signup.js" defer></script>
+    <!---we had linked our css file----->
+    <!-- jQuery library -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+
+    <!-- Latest compiled JavaScript -->
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+    <!---we had linked our css file----->
+</head>
+<body onload="slider()">
+    <div class="banner">
+        <div class="slider">
+            <img src="static/images/logo01.jpg" id="slideImg">
+        </div>
+        <div class="overlay">
+
+            <div class="log">
+                <ul>
+                    <li><a href="{{ url_for('default') }}" id="index">Home</a></li>
+                    <li><a href="{{ url_for('about') }}" id="about">About</a></li>
+                    <li><a href="{{ url_for('help') }}" id="help">Help</a></li>
+                    <li><a href="{{ url_for('login') }}" id="login">Login/Registration</a></li>
+                </ul>
+            </div>
+            <div class="content">
+                <h1>Voice Based Mail for Visually Impaired</h1>
+                <h3>challenges resolved</h3>
+            </div>
+        </div>
+    </div>
+    <div class="registration">
+        <header>Registration Form</header>
+        <form action="{{ url_for('login') }}">
+            <div class="nfield">
+                <span></span>
+                <input type="text" placeholder="First Name" id="firstname">
+            </div>
+            <div class="nfield space">
+                <span></span>
+                <input type="text" placeholder="Last Name" id="lastname">
+            </div>
+         <!--   <div class="nfield space">
+                <span></span>
+                <input type="number" placeholder="mobile number">
+            </div>
+            <div class="nfield space">
+                <span></span>
+                Male: <input type="radio" name="status">
+                Female: <input type="radio" name="status">
+            </div> -->
+            <div class="nfield space">
+                <span></span>
+                <input type="email" placeholder="Create Email" id="createemail">
+            </div>
+            <div class="nfield space">
+                <span></span>
+                <input type="password" placeholder="create password" id="password">
+            </div>
+            <div class="nfield space">
+                <span></span>
+                <input type="password" placeholder="Re-enter password" id="repassword">
+            </div>
+            <div class="nfield space">
+                <input type="submit" value="Submit" id="submit">
+            </div>
+            <div class="login space">Existing User?
+                <a href="{{ url_for('login') }}">Login</a>
+            </div>
+        </form>
+    </div>
+<script >
+    var slideImg = document.getElementById("slideImg");
+    var images = new Array(
+        "static/images/logo01.jpg",
+        "static/images/logo02.webp",
+        "static/images/logo3.webp",
+        "static/images/logo4.webp"
+        );
+        var len = images.length;
+        var i = 0;
+        function slider(){
+            if(i > len-1){
+                i = 0;
+            }
+            slideImg.src =images[i];
+            i++;
+            setTimeout('slider()',2000);
+
+        }
+ </script>
+</script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>coding</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <script src="../static/js/speech.js" defer></script>
+    <script src="../static/js/voiceIndex.js" defer></script>
+    <!-- jQuery library -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+
+    <!-- Latest compiled JavaScript -->
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+    <!---we had linked our css file----->
+</head>
+<body onload="slider()">
+    <div class="banner">
+        <div class="slider">
+            <img src="..static/images/logo01.jpg" id="slideImg">
+        </div>
+        <div class="overlay">
+            <div class="log">
+                    <p>click here to listen</p>
+                    <img src="static/images/music/play.png" id="mymusic">
+                <ul>
+                    <li><a href="{{ url_for('default') }}" id="index">Home</a></li>
+                    <li><a href="{{ url_for('about') }}" id="about">About</a></li>
+                    <li><a href="{{ url_for('help') }}" id="help">Help</a></li>
+                    <li><a href="{{ url_for('login') }}" id="login">Login/Registration</a></li>
+                </ul>
+            </div>
+            <div class="content">
+                <h1>Voice Based Mail for Visually Impaired</h1>
+                <h3>challenges resolved</h3>
+            </div>
+        </div>
+    </div>
+    </div>
+    <audio id="mysong">
+        <source src="/static/images/music/jb.mpeg" type="audio/mpeg">
+    </audio>
+   <script>
+   var slideImg = document.getElementById("slideImg");
+       var images = new Array(
+           "static/images/logo01.jpg",
+           "static/images/logo02.webp",
+           "static/images/logo3.webp",
+           "static/images/logo4.webp"
+           );
+           var len = images.length;
+           var i = 0;
+           function slider(){
+               if(i > len-1){
+                   i = 0;
+               }
+               slideImg.src =images[i];
+               i++;
+               setTimeout('slider()',2000);
+
+           }
+   </script>
+   <script>
+       var mysong = document.getElementById("mysong"); 
+       var mymusic = document.getElementById("mymusic");
+       mymusic.onclick=function(){
+       if(mysong.paused){
+           mysong.play();
+           mymusic.src="static/images/music/pause.png" ;
+        }else{
+            mysong.pause();
+            mymusic.src="static/images/music/play.png";
+        }
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>about</title>
+		<link rel="stylesheet" href="../static/css/astyle.css" />
+		<script src="../static/js/speech.js" defer></script>
+		<script src="../static/js/voiceAbout.js" defer></script>
+
+		<!---we had linked our css file----->
+		<!-- jQuery library -->
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+
+		<!-- Latest compiled JavaScript -->
+		<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+		<!---we had linked our css file----->
+	</head>
+	<body onload="slider()">
+		<div class="banner">
+			<div class="slider">
+				<img src="static/images/logo01.jpg" id="slideImg" />
+			</div>
+			<div class="overlay">
+				<div class="log">
+					<ul>
+						<li><a href="{{ url_for('default') }}" id="index">Home</a></li>
+						<li><a href="{{ url_for('about') }}" id="about">About</a></li>
+						<li><a href="{{ url_for('help') }}" id="help">Help</a></li>
+						<li>
+							<a href="{{ url_for('login') }}" id="login">Login/Registration</a>
+						</li>
+					</ul>
+				</div>
+				<div class="content">
+					<h1>Voice Based Mail for Visually Impaired</h1>
+					<h3>challenges resolved</h3>
+				</div>
+			</div>
+		</div>
+		<div class="logo"></div>
+		<script>
+			var slideImg = document.getElementById('slideImg');
+			var images = new Array(
+				'static/images/logo01.jpg',
+				'static/images/logo02.webp',
+				'static/images/logo3.webp',
+				'static/images/logo4.webp'
+			);
+			var len = images.length;
+			var i = 0;
+			function slider() {
+				if (i > len - 1) {
+					i = 0;
+				}
+				slideImg.src = images[i];
+				i++;
+				setTimeout('slider()', 2000);
+			}
+		</script>
+		<div class="box">
+			<h2>About</h2>
+			<p>
+				There's the tale of a blind, the life of a beautiful rose but painted
+				with black.
+				<br />The eyes were beautiful but covered with the darkest veil.
+				<br />The path of throns and the dark which never left. <br />It's not
+				easy to be blind and it's never been easy that way. <br />It was never
+				been their choice and none of it was a fancy. <br />But we can be the
+				light they wished for, We can be the strength <br />and we can be the
+				beautiful song that fills the heart <br />So as this project aims to.
+			</p>
+		</div>
+	</body>
+</html>
